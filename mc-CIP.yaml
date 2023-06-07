@@ -3,9 +3,10 @@ kind: Service
 metadata:
   name: vprocache01
 spec:
-  port: 11211
-  targetPort: vpromc-port
-  protocol: TCP
-selector:
-  app: vpromc
-type: ClusterIP
+  ports:
+  - port: 11211
+    targetPort: vpromc-port
+    protocol: TCP
+  selector:
+    app: vpromc
+  type: ClusterIP
